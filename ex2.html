@@ -26,6 +26,15 @@
     <script>
         var square=true;
        // add code here
+       function changeShape() {
+        const changerect = document.getElementById("div1");
+        if (square) {
+            changerect.style.borderRadius="50%";
+        } else {
+            changerect.style.borderRadius="0";
+        } 
+        square = !square;
+       }
         
     </script>
 
