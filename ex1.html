@@ -16,18 +16,8 @@
         </form>
 
         <script>
-        
             function validateForm(formName) {
-                // Error messages:
-                // Invalid age: Age must be between 10 and 40.
-                // Invalid email: Email must contain the character @.
-                // Empty password: Password must be non-empty.
-                var errorMessages="";
-                
-                
-            }
-            function validateForm() {
-                let formElem = document.forms[form];
+                let formElem = document.forms[formName];
                 var errormsg = "";
                 const idVal = formElem["id"].value;
                 if (idVal.length > 10) {
