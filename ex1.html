@@ -51,9 +51,9 @@
 
                 if (errormsg.length > 0) {
                     alert(errormsg);
-                    console.log("damn"); //return false; => form will not be submitted
+                    return false; //return false; => form will not be submitted
                 }
-                console.log("did not go through"); //return true => form will be submitted
+                return true; //return true => form will be submitted
             }
      
          </script>
