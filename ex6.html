@@ -19,6 +19,16 @@
     <script>
         
         // add code here
+
+        const selectElem = document.getElementsByTagName("select")[0];
+        selectElem.addEventListener("change", function() {
+            var ulElem = document.getElementsByTagName("ul")[0];
+            let ilElem = document.createElement("li");
+            const changeinput = document.getElementById("select_item").value;
+
+            ilElem.innerText = changeinput;
+            ulElem.appendChild(ilElem);
+        })
         
         
     </script>
