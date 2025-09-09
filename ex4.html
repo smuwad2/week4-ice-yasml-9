@@ -8,16 +8,16 @@
       <p>Get it done today</p>
       
         <!-- add HTML code here -->
-      <input type="text" id="input1">
+      <input type="text" id="inputText">
       <button name="addBtn" onclick="addItem()">Enter</button>
 
       <ul>
-         <li>Notebook <button onclick="removeItem(this.parentNode)">delete</button> </li>
-         <li>Jello <button onclick="removeItem(this.parentNode)">delete</button> </li>
-         <li>Spinach <button onclick="removeItem(this.parentNode)">delete</button></li>
-         <li>Rice <button onclick="removeItem(this.parentNode)">delete</button></li>
-         <li>Birthday Cake <button onclick="removeItem(this.parentNode)">delete</button></li>
-         <li>Candles <button onclick="removeItem(this.parentNode)">delete</button></li>
+         <li>Notebook<button onclick="removeItem(this.parentNode)">delete</button> </li>
+         <li>Jello<button onclick="removeItem(this.parentNode)">delete</button> </li>
+         <li>Spinach<button onclick="removeItem(this.parentNode)">delete</button></li>
+         <li>Rice<button onclick="removeItem(this.parentNode)">delete</button></li>
+         <li>Birthday Cake<button onclick="removeItem(this.parentNode)">delete</button></li>
+         <li>Candles<button onclick="removeItem(this.parentNode)">delete</button></li>
       </ul>
       
       <script>
@@ -25,22 +25,22 @@
         // add code here
 
          function addItem() {
-         let childli = document.createElement("li");
-         const inputya = document.getElementById("input1").value;
+            let liElem = document.createElement("li");
+            const inputya = document.getElementById("inputText").value;
 
-         childli.innerText = inputya + " ";
+            liElem.innerText = inputya;
 
-         const btnElem = document.createElement("button");
-         btnElem.innerText = "delete";
-         btnElem.addEventListener("click", function() {
-            // annonymous function will only be checked when the button is clicked and not when the website just load up
-            removeItem(this.parentNode);
-         })
-         childli.appendChild(btnElem);
+            const btnElem = document.createElement("button");
+            btnElem.innerText = "delete";
+            btnElem.addEventListener("click", function() {
+               // annonymous function will only be checked when the button is clicked and not when the website just load up
+               removeItem(this.parentNode);
+            })
+            liElem.appendChild(btnElem);
 
-         var element = document.getElementsByTagName("ul")[0];
+            var element = document.getElementsByTagName("ul")[0];
 
-         element.appendChild(childli);
+            element.appendChild(liElem);
         }
 
         function removeItem(obj) {
