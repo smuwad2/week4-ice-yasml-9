@@ -26,6 +26,35 @@
                 
                 
             }
+            function validateForm() {
+                let formElem = document.forms[form];
+                var errormsg = "";
+                const idVal = formElem["id"].value;
+                if (idVal.length > 10) {
+                    errormsg += "ID has a maximum length of 10 characters.\n";
+                }
+
+                const email =  formElem["email"].value;
+                if (email.indexOf('@') === -1) { //email.includes('@') is the same thing
+                    errormsg += "Invalid email: Email must contain the character @.\n";
+                }
+
+                const age =  formElem["age"].value;
+                if (age < 10 || age > 40) {
+                    errormsg += "Invalid age: Age must be between 10 and 40.\n";
+                }
+
+                const pw = formElem["password"].value;
+                if (pw.trim().length === 0) { //trim to take away spaces
+                    errormsg += "Empty password: Password must be non-empty.\n";
+                }
+
+                if (errormsg.length > 0) {
+                    alert(errormsg);
+                    console.log("damn"); //return false; => form will not be submitted
+                }
+                console.log("did not go through"); //return true => form will be submitted
+            }
      
          </script>
 </body>
